@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Registro de Serviços de Caminhão</title>
+    <style>
+        /* Adicione o estilo CSS aqui, se necessário */
+    </style>
+</head>
+<body>
+    <h1>Registro de Serviços de Caminhão</h1>
+
+    <form id="servicoForm">
+        <label for="motorista">Nome do Motorista:</label>
+        <input type="text" id="motorista" name="motorista" required><br>
+
+        <label for="data">Data do Serviço:</label>
+        <input type="text" id="data" name="data" required><br>
+
+        <label for="descricao">Descrição do Serviço:</label>
+        <input type="text" id="descricao" name="descricao" required><br>
+
+        <label for="custo">Custo do Serviço:</label>
+        <input type="text" id="custo" name="custo" required><br>
+
+        <input type="submit" value="Salvar Serviço">
+    </form>
+
+    <h2>Lista de Serviços de Caminhão</h2>
+    <ul id="listaServicos">
+        <!-- Aqui você exibirá a lista de serviços de caminhão com JavaScript -->
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const servicoForm = document.getElementById('servicoForm');
+            const listaServicos = document.getElementById('listaServicos');
+
+            // Função para salvar o serviço no armazenamento local (localStorage)
+            function salvarServico() {
+                const data = document.getElementById('data').value;
+                const descricao = document.getElementById('descricao').value;
+                const custo = document.getElementById('custo').value;
+
+                if (data && descricao && custo) {
+                    const servico = { data, descricao, custo };
+
+                    // Verifica se já existe um array de serviços no localStorage
+                    let servicos = JSON.parse(localStorage.getItem('servicos')) || [];
+
+                    // Adiciona o novo serviço ao array
+                    servicos.push(servico);
+
+                    // Salva o array atualizado de serviços no localStorage
+                    localStorage.setItem('servicos', JSON.stringify(servicos));
+
+                    // Limpa o formulário
+                    servicoForm.reset();
+
+                    // Atualiza a lista de serviços exibida na página
+                    mostrarServicos();
+                }
+            }
+
+            // Função para mostrar os serviços na página
+            function mostrarServicos() {
+                const servicos = JSON.parse(localStorage.getItem('servicos')) || [];
+
+                // Limpa a lista atual
+                listaServicos.innerHTML = '';
+
+                // Itera sobre os serviços e os exibe na lista
+                servicos.forEach(function (servico, index) {
+                    const li = document.createElement('li');
+                    li.textContent = `Data: ${servico.data}, Descrição: ${servico.descricao}, Custo: ${servico.custo}`;
+                    listaServicos.appendChild(li);
+                });
+            }
+
+            // Registra um evento para o formulário
+            servicoForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                salvarServico();
+            });
+
+            // Mostra os serviços salvos ao carregar a página
+            mostrarServicos();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,129 @@
+/* Estilos para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o cabeçalho */
+h1 {
+    color: #007BFF;
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+/* Estilos para o formulário */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #007BFF;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #0056b3;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a lista de serviços */
+h2 {
+    margin-top: 30px;
+    color: #007BFF;
+    font-size: 28px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #444;
+    padding: 20px;
+    border: 2px solid #007BFF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para o widget de calendário (se estiver usando Flatpickr) */
+.flatpickr-calendar {
+    background-color: #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.flatpickr-monthDropdown-months, .flatpickr-monthDropdown-arrow {
+    background-color: #007BFF !important;
+    color: #fff !important;
+}
+
+.flatpickr-day {
+    font-size: 18px;
+}
+
+/* Adicione outros estilos personalizados conforme necessário */
+/* Estilos para a área onde os serviços são exibidos */
+#listaServicos {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
